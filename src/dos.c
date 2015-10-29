@@ -10,6 +10,7 @@ int time_ticks = 0;
 int state = 0;
 int interval = 150;
 char cursor = 0;
+char amPm[] = "AM";
 
 void draw_text();
 
@@ -23,12 +24,14 @@ void draw_text()
 {
   time_t t = time(NULL);
   struct tm * tick_time = localtime(&t);
+  if (tick_time->tm_hour > 12)
+    strcpy(amPm, "PM");
   if (tick_time->tm_hour > 12) //Convert 24h to 12h format.
     tick_time->tm_hour -= 12;
   if (tick_time->tm_hour == 0) //Set hour to 12 if midnight.
     tick_time->tm_hour = 12;
   
-  snprintf(text, sizeof(text), "C:\\>time /t\n%02d:%02d\n\nC:\\>date /t\n%02d/%02d/%04d", tick_time->tm_hour, tick_time->tm_min, tick_time->tm_mon+1, tick_time->tm_mday, tick_time->tm_year+1900);
+  snprintf(text, sizeof(text), "C:\\>time /t\n%02d:%02d %s\n\nC:\\>date /t\n%02d/%02d/%04d", tick_time->tm_hour, tick_time->tm_min, amPm, tick_time->tm_mon+1, tick_time->tm_mday, tick_time->tm_year+1900);
   
   if (time_ticks >= 2)
   {
