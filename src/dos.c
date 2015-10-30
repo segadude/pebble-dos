@@ -24,7 +24,7 @@ void draw_text()
 {
   time_t t = time(NULL);
   struct tm * tick_time = localtime(&t);
-  if (tick_time->tm_hour > 12)
+  if (tick_time->tm_hour >= 12)
     strcpy(amPm, "PM");
   if (tick_time->tm_hour > 12) //Convert 24h to 12h format.
     tick_time->tm_hour -= 12;

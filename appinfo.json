@@ -3,7 +3,7 @@
     "capabilities": [
         ""
     ],
-    "companyName": "clusterrr@clusterrr.com",
+    "companyName": "Brandsonic",
     "longName": "DOS Terminal",
     "projectType": "native",
     "resources": {
@@ -17,7 +17,7 @@
     },
     "sdkVersion": "2",
     "shortName": "DOS Terminal",
-    "uuid": "701939f5-5804-40d0-91ec-16a098fa8bb5",
+    "uuid": "c981c135-5812-429d-8f1f-d6903787c45e",
     "versionCode": 1,
     "versionLabel": "1.0",
     "watchapp": {
